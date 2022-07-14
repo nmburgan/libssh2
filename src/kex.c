@@ -3038,22 +3038,22 @@ kex_method_extension_negotiation = {
 };
 
 static const LIBSSH2_KEX_METHOD *libssh2_kex_methods[] = {
-#if LIBSSH2_ED25519
-    &kex_method_ssh_curve25519_sha256,
-    &kex_method_ssh_curve25519_sha256_libssh,
-#endif
 #if LIBSSH2_ECDSA
     &kex_method_ecdh_sha2_nistp256,
     &kex_method_ecdh_sha2_nistp384,
     &kex_method_ecdh_sha2_nistp521,
 #endif
-    &kex_method_diffie_helman_group_exchange_sha256,
-    &kex_method_diffie_helman_group16_sha512,
-    &kex_method_diffie_helman_group18_sha512,
+#if LIBSSH2_ED25519
+    &kex_method_ssh_curve25519_sha256,
+    &kex_method_ssh_curve25519_sha256_libssh,
+#endif
     &kex_method_diffie_helman_group14_sha256,
+    &kex_method_diffie_helman_group_exchange_sha256,
+    &kex_method_diffie_helman_group_exchange_sha1,
     &kex_method_diffie_helman_group14_sha1,
     &kex_method_diffie_helman_group1_sha1,
-    &kex_method_diffie_helman_group_exchange_sha1,
+    &kex_method_diffie_helman_group16_sha512,
+    &kex_method_diffie_helman_group18_sha512,
     &kex_method_extension_negotiation,
   NULL
 };
