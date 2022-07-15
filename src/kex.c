@@ -3038,10 +3038,6 @@ kex_method_extension_negotiation = {
 };
 
 static const LIBSSH2_KEX_METHOD *libssh2_kex_methods[] = {
-#if LIBSSH2_ED25519
-    &kex_method_ssh_curve25519_sha256,
-    &kex_method_ssh_curve25519_sha256_libssh,
-#endif
 #if LIBSSH2_ECDSA
     &kex_method_ecdh_sha2_nistp256,
     &kex_method_ecdh_sha2_nistp384,
